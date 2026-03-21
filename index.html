@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Feedback Registration Form</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* Internal CSS (required): page-level visual polish */
+      .page-title {
+        letter-spacing: 0.4px;
+        text-transform: uppercase;
+      }
+
+      .required-mark {
+        color: #a61b1b;
+        font-weight: 700;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="card" aria-labelledby="form-heading">
+        <h1 id="form-heading" class="page-title">
+          Student Feedback Registration Form
+        </h1>
+        <p class="subtitle">
+          Please complete all required fields before submitting your feedback.
+        </p>
+
+        <form id="feedbackForm" novalidate>
+          <div class="form-row">
+            <label for="studentName"
+              >Student Name <span class="required-mark">*</span></label
+            >
+            <input
+              type="text"
+              id="studentName"
+              name="studentName"
+              placeholder="Enter your full name"
+            />
+            <small class="error" id="nameError"></small>
+          </div>
+
+          <div class="form-row">
+            <label for="email"
+              >Email ID <span class="required-mark">*</span></label
+            >
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="name@example.com"
+            />
+            <small class="error" id="emailError"></small>
+          </div>
+
+          <div class="form-row">
+            <label for="mobile"
+              >Mobile Number <span class="required-mark">*</span></label
+            >
+            <input
+              type="text"
+              id="mobile"
+              name="mobile"
+              maxlength="15"
+              placeholder="10-digit mobile number"
+            />
+            <small class="error" id="mobileError"></small>
+          </div>
+
+          <div class="form-row">
+            <label for="department"
+              >Department <span class="required-mark">*</span></label
+            >
+            <select id="department" name="department">
+              <option value="">Select Department</option>
+              <option value="Computer Science">Computer Science</option>
+              <option value="Information Technology">
+                Information Technology
+              </option>
+              <option value="Electronics">Electronics</option>
+              <option value="Mechanical">Mechanical</option>
+              <option value="Civil">Civil</option>
+            </select>
+            <small class="error" id="departmentError"></small>
+          </div>
+
+          <fieldset class="form-row">
+            <legend>Gender <span class="required-mark">*</span></legend>
+            <div class="radio-group" id="genderGroup">
+              <label
+                ><input type="radio" name="gender" value="Male" /> Male</label
+              >
+              <label
+                ><input type="radio" name="gender" value="Female" />
+                Female</label
+              >
+              <label
+                ><input type="radio" name="gender" value="Other" /> Other</label
+              >
+            </div>
+            <small class="error" id="genderError"></small>
+          </fieldset>
+
+          <div class="form-row">
+            <label for="comments"
+              >Feedback Comments <span class="required-mark">*</span></label
+            >
+            <textarea
+              id="comments"
+              name="comments"
+              rows="5"
+              placeholder="Write at least 10 words about your learning experience."
+            ></textarea>
+            <small class="error" id="commentsError"></small>
+          </div>
+
+          <div class="button-row">
+            <button type="submit" id="submitBtn">Submit</button>
+            <button type="reset" id="resetBtn" class="secondary">Reset</button>
+          </div>
+        </form>
+
+        <p
+          id="successMessage"
+          class="success"
+          role="status"
+          aria-live="polite"
+        ></p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
